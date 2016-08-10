@@ -66,15 +66,15 @@ app.delete('/post/:id', postCtrl.delete);   // Remove a blog from teh database
 
 // // This is how to authenticate users attempting to access an API route or page (but it won't block a state in a SPA) - that must be done in logic on the front end. Theoretically a user could get our admin page, but shouldn't be able to use it to modify any data.
 // // I will delete the route later after applying the principles to our blog post routes.
-// app.get('/admin', function(req, res, next){
-//   console.log ("req.isAuthenticated: ", req.isAuthenticated());
-//   if (req.isAuthenticated()){
-//     res.send
-//   } else {
-//     console.log("Unauthorized attempt to access /admin has been recorded");
-//     res.send("Unauthorized attempt to access /admin has been recorded");
-//   }
-// });
+app.get('/admin', function(req, res, next){
+  console.log ("req.isAuthenticated: ", req.isAuthenticated());
+  if (req.isAuthenticated()){
+    res.send
+  } else {
+    console.log("Unauthorized attempt to access /admin has been recorded");
+    res.send("Unauthorized attempt to access /admin has been recorded");
+  }
+});
 
 
 app.post('/post', ifAuthenticated, postCtrl.create);         // Create new blog entry in the database

@@ -1,3 +1,4 @@
+
 html {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
@@ -125,6 +126,7 @@ button:focus {
   	font-size:30px;
   	text-shadow: 3px 3px 3px black, 2px 2px 0px rgba(0,0,0,0.90);
   }
+
 /*The styles below are for the about.html page*/
 .bg {
   background: url('https://images.unsplash.com/photo-1459233313842-cd392ee2c388?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80') no-repeat center center;
@@ -135,21 +137,26 @@ button:focus {
   left:0;
   z-index: -1;
 }
-
 .jumbotron {
   height: 350px;
   color: white;
   text-shadow: #444 0 3px 3px;
   background:transparent;
   padding: 10%;
-
 }
-
 .abouttext {
+  padding-left: 100px;
   text-align: left;
   width:650px;
   font-size:20px;
  }
+ .abouttitle {
+    margin-left: -75px;
+    text-shadow: 3px 3px 3px black, 2px 2px 0px rgba(0,0,0,0.90);
+ }
+ .abouttagline {
+   margin-left: -65px;
+  }
 
 /* The styles below will bring shame on my family for generations. PLEASE HELP ME */
 /*Also something below here made the login button jump to the center. What could it be?*/

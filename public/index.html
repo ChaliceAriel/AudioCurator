@@ -174,15 +174,15 @@
         <h3 id="logoText">Audio Curator</h3>
       </div>
       <ul class="nav nav-pills nav-stacked text-center">
-        <li class="active"><a href="#">Main</a></li>
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li ng-hide='showLoginButton'><a ui-sref='admin'>Admin Panel</a></li>
+        <li ng-hide='showLoginButton'><a ng-click='refresh()'> Admin Panel</a></li>
         <!-- showAuthForm is a variable that toggles between true and false when this div is clicked to hide or show the login/register form -->
         <li ng-show='showLoginButton' ng-click='showAuthForm = showAuthForm ? false : true'>
-          <a href="#"><span class="glyphicon glyphicon-print"></span> Login</a>
+          <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
         </li>
         <li ng-hide='showLoginButton' ng-click='logout()'>
-          <a href="#"><span class="glyphicon glyphicon-print"></span> Logout</a>
+          <a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
         </li>
       </ul><br>
       <button id="close"><span class="glyphicon glyphicon-remove"></span></button>
@@ -192,7 +192,6 @@
       <div class="auth" ng-show="showAuthForm">
         <div class="login" ng-show="loginOrRegister">
           <form ng-submit="login(user); clearLogin()">
-            <h1>Log In Here</h1>
             <input ng-model='user.email' type="text" placeholder="Email" value="">
             <input ng-model='user.password' type="password" placeholder="Password" value=""><br>
             <input class="loginbutton" type="submit" value="Login">

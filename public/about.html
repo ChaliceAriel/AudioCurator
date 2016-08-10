@@ -4,12 +4,9 @@
   <title>About</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
-
    
-
 </head>
 <body>
-
     <!--  *** SLIDER BEGIN!!! *** -->
      <div id='slider' class="text-center">
       <div id="sm-spacer">
@@ -19,15 +16,13 @@
         <h3 id="logoText">Audio Curator</h3>
       </div>
       <ul class="nav nav-pills nav-stacked text-center">
-        <li class="main-btn"><a href="#">Main</a></li>
+        <li><a href="index.html">Home</a></li>
         <li class="active"><a href="about.html">About</a></li>
-        <li ng-hide='showLoginButton'><a ui-sref='admin'>Admin Panel</a></li>
+        <li><a ui-sref='index.html/admin'>Admin Panel</a></li>
 
-        <li ng-show='showLoginButton' ng-click='showAuthForm = showAuthForm ? false : true'>
-          <a href="#"><span class="glyphicon glyphicon-print"></span> Login</a>
         </li>
         <li ng-hide='showLoginButton' ng-click='logout()'>
-          <a href="#"><span class="glyphicon glyphicon-print"></span> Logout</a>
+          <a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
         </li>
       </ul><br>
       <button id="close"><span class="glyphicon glyphicon-remove"></span></button>
@@ -38,11 +33,9 @@
 <div id="trigger"><span id="menu" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div>
  <div class="bg"></div>
 <div class="jumbotron">
-  <h1>About AudioCurator</h1>
-  <p class="lead tagline"> An open source Audio Blog</p>
+  <h1 class = "abouttitle">About AudioCurator</h1>
+  <p class="lead tagline abouttagline"> An open source Audio Blog</p>
 </div>
-
-
   <div class="row abouttext">
    
   
@@ -53,54 +46,43 @@
     We have created a well-documented READ.ME in our GitHub repo, and have thoroughly commented our code to allow anyone to incorporate this template as a standalone blog, or link to it in their personal portfolios.
     <br><br>
    <a href="https://github.com/AudioCurator/AudioCurator">GitHub Repository</a>
-
     <hr>
-
   </div>
-
    
   <div class="row abouttext">
   <h1>The creators</h1>
     <hr>
     <h2>Brian</h2>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-    Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-    dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-    Aliquam in felis sit amet augue.
+    Brian's previous skills in computer networking, troubleshooting, and server administration/virtualization have continued to be very useful in web development and he is currently interested in continuing to learn more. 
+    <br><br>
+    He has been an avid underground music fan for years, and loves discovering new and unheard tracks that are good for the brain. AudioCurator was a natural project to combine his love for music and developing coding skills. 
     <h2>Chalice</h2>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-    Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-    dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-    Aliquam in felis sit amet augue.
+     Chalice's coding adventure started when a friend invited her to join his tech startup as a User Experience Designer in 2014. In January of 2015, her senior year at MSU Bozeman (BA in Music Technology), She took a Computing for The Arts course. She learned to write programs for Arduino microcontrollers and built a 64-input, lighted midi controller and an MP3 player. 
+     <br><br>
+     She has been continuing her education in programming and code and is excited to 
+     begin working on new projects. Besides code, she enjoys incorporating her musical past in the present by singing Kirtan in a group setting as well as for yoga classes. She is also a rather talented cello player. 
     <h2>Jeslyn</h2>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-    Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-    dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-    Aliquam in felis sit amet augue.
-
-  </div>
+     Jeslyn's interest in code began earlier this year, as a couple different members of her family began their own coding adventures and gave her insight into the code and tech community as whole. She loves the idea of building and creating new things that didn't previously exist, as well as learning new languages. She has a deep-seated love of music having studied voice for 8 years and is an amateur guitar player herself. 
+     <br><br>
+      Jeslyn has had a nomadic upbringing with roots in the Pacific Northwest and Bozeman, MT.  She has recently settled in Helena, MT and enjoys the benefits of living anywhere where outdoor pursuits are aplenty.
+    
   <hr>
+  </div>
+  
    
     <div class="row abouttext">
     <h2>Special Thanks</h2>
     A special thanks to:<br>
-
      SoundCloud, their SDK (SoundCloud Developer Kit), and all the artists that have come together to create a diverse universe of sounds in the SoundCloud database. 
-
-     La di da special thanks to whomever else we want to thank :) 
     <br>
-
   </div>
 </div>
-
 <hr>
-
 <div class="container">
   <div class="row">
       <div class="col-md-12 text-center"><p>The End.</p></div>
     </div>
 </div>
-
  <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -109,18 +91,15 @@
             </div>
            
         </footer>
-
      <script type = 'text/javascript'>
        var jumboHeight = $('.jumbotron').outerHeight();
        function parallax(){
        var scrolled = $(window).scrollTop();
        $('.bg').css('height', (jumboHeight-scrolled) + 'px');
    }
-
      $(window).scroll(function(e){
            parallax();
            });
-
     </script>             
  <!-- *** Footer *** -->
     <div id="footer" >
@@ -146,14 +125,11 @@
         <p id="copyright" class="text-center">Copyright &copy; AudioCurator 2016</p>
       </div>
     </div>
-
     <!-- *** JavaScripts *** -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="./dist/jquery.slidereveal.min.js"></script>
   <script>        /*http://nnattawat.github.io/slideReveal/*/
-
     var slider = $('#slider').slideReveal();
-
     $("#trigger").click(function(){
       var slider = $('#slider').slideReveal({
         push: false,
@@ -161,22 +137,16 @@
         overlayColor: "rgba(0,0,0,0.5)",
         autoEscape: true
       });
-
       slider.slideReveal("toggle", false);
     })
-
     $("#close").click(function() {
-
         $("#slider").slideReveal({
           push: false,
           overlay: false,
           autoEscape: true
         });
-
     });
-
     $("#slider-menu").children().click(function() {
-
         $("#slider").slideReveal({
           push: false,
           overlay: false,

@@ -186,6 +186,9 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
       displayPosts();
     });
   };
+  $scope.refresh = function () {
+    location.reload();
+  }
 
   var loopId= function(){
     for (var i = 0;i < $scope.songs.length;i++){
