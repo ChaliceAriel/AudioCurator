@@ -120,7 +120,7 @@ h1 {
 }
 #footer {
   line-height: 2;
-  font-size: 14px;
+  font-size: 16px;
   padding-top: 30px;
   border-top: 2px solid #00ffff;
   position: absolute;
@@ -166,7 +166,7 @@ h1 {
   clear: both;
 } 
 
-.nav-pills>li+li,  {
+.nav-pills>li+li {
   margin-bottom: 20px; // 2px by default
 } 
 .nav-pills>li.active {

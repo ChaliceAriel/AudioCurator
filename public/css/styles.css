@@ -49,6 +49,12 @@ html {
   height: 100px;
   margin-bottom: 20px;
 }
+#logoText {
+  width: max-content;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  text-shadow: 2px 2px 8px #00ffff;
+}
 .nav {
   clear: both;
 }
@@ -57,7 +63,7 @@ html {
   height: 50px;
   margin: 0 auto;
 }
-.nav-pills>li+li, .main-btn {
+.nav-pills>li+li, #li-1 {
   margin-bottom: 20px; // 2px by default
 } 
 .nav-pills>li.active {
