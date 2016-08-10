@@ -96,10 +96,11 @@
 
               <div class="well" ng-repeat="post in postHistory| filter: search">
 
-                  <span ng-hide="readytoupdate" ng-dblclick="readytoupdate =true">
+                  <span>
                     <h2><strong>{{post.displaydate}} - {{post.trackInfo.title}}</strong></h2>
                     <img ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
-                    <h5>{{post.body}}</h5><h6> - {{post.postedBy}}<h6>
+                    <h5 ng-hide="readytoupdate">{{post.body}}</h5>
+                    <h6> - {{post.postedBy}}<h6>
                     <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud</a>
                   </span>
 
@@ -107,13 +108,14 @@
                     <div class="input-field col s6">
                       <input ng-model= "post.body"/>
                       <input type="submit"/>
-                      <button ng-show="readytoupdate" ng-click="readytoupdate=false">cancel</button>
+                      <button ng-click="readytoupdate=false">cancel</button>
                     </div>
                   </form>
 
                   <button ng-hide="readytodelete" ng-click="readytodelete=true">delete</button>
                   <button ng-show="readytodelete" ng-click="readytodelete=false">cancel</button>
                   <button ng-show="readytodelete" ng-click="remove(post._id)">delete</button>
+                  <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
               </div>
 
             </div>
@@ -174,9 +176,12 @@
         <h3 id="logoText">Audio Curator</h3>
       </div>
       <ul class="nav nav-pills nav-stacked text-center">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="#">Example 1</a></li>
+        <li><a href="#">Example 2</a></li>
+        <li><a href="#">Example 3</a></li>
+        <li><a href="#">Example 4</a></li>
         <li><a href="about.html">About</a></li>
-        <li ng-hide='showLoginButton'><a ng-click='refresh()'> Admin Panel</a></li>
+        <li id="admin-button" ng-hide='showLoginButton'><a>Admin Panel</a></li>
         <!-- showAuthForm is a variable that toggles between true and false when this div is clicked to hide or show the login/register form -->
         <li ng-show='showLoginButton' ng-click='showAuthForm = showAuthForm ? false : true'>
           <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
@@ -191,22 +196,22 @@
       <!-- Login and registration section at bottom of slider -->
       <div class="auth" ng-show="showAuthForm">
         <div class="login" ng-show="loginOrRegister">
-          <form ng-submit="login(user); clearLogin()">
+          <form id="login-form" ng-submit="login(user); clearLogin()">
             <input ng-model='user.email' type="text" placeholder="Email" value="">
             <input ng-model='user.password' type="password" placeholder="Password" value=""><br>
-            <input class="loginbutton" type="submit" value="Login">
-            <a ng-click='loginOrRegister=false'>Create New Account Instead</a>
+            <button id="loginbutton" type="submit">Login</button>
+            <button class="new-account" ng-click='loginOrRegister=false'>Create New Account</button>
           </form>
         </div>
 
-        <div class="register" ng-hide="loginOrRegister">
+        <div id="register" class="register" ng-hide="loginOrRegister">
           <form ng-submit="register(newUser); clearLogin()">
-            <h1>Register Now!</h1>
+            <h2>Register Now!</h2>
             <input ng-model='newUser.displayName' type="text" placeholder="Display Name" value=""><br>
             <input ng-model='newUser.email' type="text" placeholder="Email" value="">
             <input ng-model='newUser.password' type="password" placeholder="Password" value=""><br>
-            <input class="registerbutton" type="submit" value="Register & Login">
-            <a ng-click='loginOrRegister=true'>Log In Instead</a>
+            <button class="registerbutton" type="submit">Register & Login</button>
+            <button ng-click='loginOrRegister=true'>Log In</button>
           </form>
         </div>
       </div>
@@ -250,6 +255,26 @@
     })
 
     $("#close").click(function() {
+
+        $("#slider").slideReveal({
+          push: false,
+          overlay: false,
+          autoEscape: true
+        });
+
+    });
+
+    $("#loginbutton").click(function() {
+
+        $("#slider").slideReveal({
+          push: false,
+          overlay: false,
+          autoEscape: true
+        });
+
+    });
+
+    $("#admin-button").click(function() {
 
         $("#slider").slideReveal({
           push: false,

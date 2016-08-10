@@ -166,7 +166,7 @@ h1 {
   clear: both;
 } 
 
-.nav-pills>li+li {
+.nav-pills>li+li,  {
   margin-bottom: 20px; // 2px by default
 } 
 .nav-pills>li.active {
@@ -176,6 +176,7 @@ h1 {
 }
 
 .nav-pills>li {
+  margin-bottom: 20px;
   border: 2px solid #00ffff;
   border-radius: 4px;
   background-color: #fff;
@@ -209,25 +210,40 @@ button, input {
   color: #00ffff;
   background-color: #333;
 }
+input {
+  margin-bottom: 10px;
+}
 button:hover {
   border-color: #00ffff;
 }
-button:focus { 
+button:focus, input:focus { 
   outline:0 !important; 
 }
-input.loginbutton {
-
+.btn:focus,.btn:active {
+  outline: none !important;
 }
-form {
-  margin-top: 100px;
+textarea:focus {
+  outline: none !important;
+}
+textarea#body {
+  width: 100%;
+}
+#login-form {
+  margin-top: 260px;
+}
+#post-form label {
+  float: left;
+}
+#register {
+  margin-top: 210px;
 }
 #close {
   border-radius: 50%;
   position: relative;
-  top: 250px;
+  top: 210px;
 }
-.btn:focus,.btn:active input:focus, input:active {
-   outline: none !important;
+#search {
+  color: #00ffff;
 }
 #search:focus {
   border-color:#00ffff;

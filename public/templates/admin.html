@@ -1,15 +1,22 @@
-<div ng-init="checkIfLoggedIn()">
-	<h2>Hello, {{currentUser}}.</h2>
-	<h1>YOU ARE LOGGED IN</h1>
-	<h2> Welcome to the command center. </h2>
-	<h3> What are you you listening to now? </h3>
-	<form class= "active" ng-submit="postBlog(newPost)">
-			<label for="shareUrl">Soundcloud Share URL</label>
-			<input id="shareUrl" type="text" ng-model="newPost.trackInfo.shareUrl">
-			<label for="body"> AND HOW DOES THAT MAKE YOU FEEL!?</label>
-			<input id="body" type="text" ng-model="newPost.body">
-			<button type = "submit">Submit</button>
+<div id="post-form" class="well" ng-init="checkIfLoggedIn()">
+	<h2 class="text-center">Hello, {{currentUser}}.</h2>
+	<h2 class="text-center">YOU ARE LOGGED IN</h2>
+	<br>
+	<h3>Add to your playlist below:</h3>
+	<br>
+
+	<form role="form">
+	  <div class="form-group">
+	    <label for="shareUrl">Soundcloud Share URL<br></label>
+	    <input id="shareUrl" type="text" ng-model="newPost.trackInfo.shareUrl">
+	  </div>
+	  <div class="form-group">
+	    <label for="body">Your Blog Post<br></label>
+	    <textarea id="body" type="text" rows="5" ng-model="newPost.body"></textarea>
+	  </div>
+	  <button type="submit">Submit</button>
 	</form>
+
 	<h3 ng-show='newBlogPost'> Preview: </h3>
 	<h4>{{newBlogPost}}</h4>
 </div>
