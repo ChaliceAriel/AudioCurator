@@ -7,8 +7,8 @@
     <!-- *** Stylesheets *** -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Custom Stylesheets -->
-    <link href="./css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="./css/AudioPlayer.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/AudioBlog_dark.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/AudioPlayer_dark.css" rel="stylesheet" type="text/css"/>
 
 
     <title>Audio Curator</title>
@@ -20,9 +20,10 @@
 
 
     <!-- Main page begins here -->
-    <div id="trigger"><span id="menu" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div>
+  <div id="trigger"><span id="menu" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+  </div>
     <div id="header" class="container-fluid">
-      <span id="brand"><img id="blog-logo" src="./img/headphones.png"/><h1 id="blog-title">Audio Curator</h1></span>
+      <span id="brand"><img id="blog-logo" src="images/headphones.png"/><h1 id="blog-title">Audio Curator</h1></span>  
     </div>
     <div id="main" class="container-fluid">
       <div id="sm-spacer">
@@ -32,20 +33,19 @@
         </div>
         <div class="col sm-10 col-sm-offset-2">
 
-    <!--======================= SOUNDMANAGER2 PLAYER GOES HERE! ============================-->
-    <div id="player-box">
-      <div id="player">
+    <!--======================= SOUNDMANAGER2 PLAYER STARTS HERE! ============================-->
+
+  <div id="player-box">    
+    <div id="player">
 
         <!-- init soundManager2 player -->
         <sound-manager></sound-manager>
 
-            <div id="track-name"><h4 id="track-name">Now Playing: {{currentTitle}} by Undefined ({{ currentPostion }} / {{ currentDuration }})</h4></div>
 
             <!-- Play/Pause button and shuffle button -->
             <!-- To change Play or Pause icons you will have to see line 5149 in the angular-soundmanager2.js file -->
             <button play-pause-toggle data-play="Play!" data-pause="Pause!" id="play" ng-click="loopId()"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
             <button id="shuffle"><span class="glyphicon glyphicon-random" aria-hidden="true"></span></button>
-
             <!-- Seek buttons -->
             <button next-track id="next"><span class="glyphicon glyphicon-step-forward" aria-hidden="true" "></span></button>
             <button prev-track id="previous"><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></button>
@@ -54,19 +54,24 @@
             <button music-volume data-type="increase" id="volume-up"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
               <span id="vol-icon" class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
             <button music-volume data-type="decrease" id="volume-down"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-
-            <!-- Bug! The currentPostion (sic) and/or currentDuration push the play button to the left until a song starts playing -->
+            <!-- Position Markers --> 
             <h5 class="progress-label">{{ currentPostion || "00:00"}}</h5>
             <h5 class="progress-label-after">{{ currentDuration }}</h5>
-
             <!-- Seekbar -->
             <div class="progress seekBase" seek-track>
-              <div class="progress-bar progress-bar-info seekLoad" ng-style="{width : ( progress + '%' ) }" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"><span class="sr-only"></span></div>
+              <div class="progress-bar progress-bar-info seekLoad" ng-style="{width : ( progress + '%' ) }" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"><span class="sr-only"></span>
+              </div>
             </div>
+            <!-- Title Marquee-->
+            <div class="marquee"><h4>Now Playing: {{currentTitle}} </h4></div>
 
-      </div>
     </div>
+  </div>
+    
     <!--======================= SOUNDMANAGER2 PLAYER ENDS HERE! ============================-->
+
+
+
 
     <div id="lg-spacer">
     </div>
@@ -77,73 +82,6 @@
 
 <!-- Blog posts start here, but should we move to blog.html? -->
 <div class="row content">
-
-    <!--     <div class="col-sm-3 sidenav hidden-xs">
-          <h2>Logo</h2>
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#section1">Dashboard</a></li>
-            <li><a href="#section2">Age</a></li>
-            <li><a href="#section3">Gender</a></li>
-            <li><a href="#section3">Geo</a></li>
-          </ul><br>
-        </div>
-        <br> -->
-
-
-    <!-- *** SLIDER BEGIN!!! *** -->
-    <div id='slider' class="text-center">
-      <div id="sm-spacer">
-      </div>
-      <div id="logo">
-        <img id="blog-logo-slider" src="./img/headphones.png"/>
-        <h3 id="logoText">Audio Curator</h3>
-      </div>
-      <ul class="nav nav-pills nav-stacked text-center">
-        <li class="active"><a href="#">Main</a></li>
-        <li><a ui-sref='about'>About</a></li>
-        <li ng-hide='showLoginButton'><a ui-sref='admin'>Admin Panel</a></li>
-        <!-- showAuthForm is a variable that toggles between true and false when this div is clicked to hide or show the login/register form -->
-        <li ng-show='showLoginButton' ng-click='showAuthForm = showAuthForm ? false : true'>
-          <a href="#"><span class="glyphicon glyphicon-print"></span> Login</a>
-        </li>
-        <li ng-hide='showLoginButton' ng-click='logout()'>
-          <a href="#"><span class="glyphicon glyphicon-print"></span> Logout</a>
-        </li>
-      </ul><br>
-      <button id="close"><span class="glyphicon glyphicon-remove"></span></button>
-
-
-      <!-- Login and registration section at bottom of slider -->
-      <div class="auth" ng-show="showAuthForm">
-        <div class="login" ng-show="loginOrRegister">
-          <form ng-submit="login(user); clearLogin()">
-            <h1>Log In Here</h1>
-            <input ng-model='user.email' type="text" placeholder="Email" value="">
-            <input ng-model='user.password' type="password" placeholder="Password" value=""><br>
-            <input class="loginbutton" type="submit" value="Login">
-            <a ng-click='loginOrRegister=false'>Create New Account Instead</a>
-          </form>
-        </div>
-
-        <div class="register" ng-hide="loginOrRegister">
-          <form ng-submit="register(newUser); clearLogin()">
-            <h1>Register Now!</h1>
-            <input ng-model='newUser.displayName' type="text" placeholder="Display Name" value=""><br>
-            <input ng-model='newUser.email' type="text" placeholder="Email" value="">
-            <input ng-model='newUser.password' type="password" placeholder="Password" value=""><br>
-            <input class="registerbutton" type="submit" value="Register & Login">
-            <a ng-click='loginOrRegister=true'>Log In Instead</a>
-          </form>
-        </div>
-      </div>
-      <!-- End login / registration section -->
-
-    </div>
-
-     <!-- *** SLIDER END!!! *** -->
-
-
-
       <div class="col-sm-11 col-sm-offset-1">
           <div class="row">
 
@@ -210,11 +148,10 @@
             <i class="glyphicon glyphicon-search"></i>
             <input id="search" type="text" name="Search"/>
           </div>
-          <div id="footerSocialMedia" class="col-xs-4 text-center">
-            <a href="#"><span class="hb hb-xs"><i class="fa fa-facebook"></i></span></a>
-            <a href="#"><span class="hb hb-xs"><i class="fa fa-twitter"></i></span></a>
-            <a href="#"><span class="hb hb-xs"><i class="fa fa-github-square"></i></span></a>
-            <a href="#"><span class="hb hb-xs"><i class="fa fa-linkedin-square"></i></span></a>
+          <div id="footerSocial" class="col-xs-4 text-center">
+            <a href="#"><img src="images/fbook_dark.png" alt="facebook link" /></a>
+            <a href="#"><img src="images/tweet_dark.png" alt="twitter link" /></a>
+            <a href="#"><img src="images/github_dark.png" alt="github link" /></a>
           </div>
           <div id="footerNav" class="navbar-nav col-xs-4">
             <ul>
@@ -228,6 +165,58 @@
       </div>
     </div>
 
+        <!-- *** SLIDER BEGIN!!! *** -->
+    <div id='slider' class="text-center">
+      <div id="sm-spacer">
+      </div>
+      <div id="logo">
+        <img id="blog-logo-slider" src="./images/headphones.png"/>
+        <h3 id="logoText">Audio Curator</h3>
+      </div>
+      <ul class="nav nav-pills nav-stacked text-center">
+        <li class="active"><a href="#">Main</a></li>
+        <li><a href="about.html">About</a></li>
+        <li ng-hide='showLoginButton'><a ui-sref='admin'>Admin Panel</a></li>
+        <!-- showAuthForm is a variable that toggles between true and false when this div is clicked to hide or show the login/register form -->
+        <li ng-show='showLoginButton' ng-click='showAuthForm = showAuthForm ? false : true'>
+          <a href="#"><span class="glyphicon glyphicon-print"></span> Login</a>
+        </li>
+        <li ng-hide='showLoginButton' ng-click='logout()'>
+          <a href="#"><span class="glyphicon glyphicon-print"></span> Logout</a>
+        </li>
+      </ul><br>
+      <button id="close"><span class="glyphicon glyphicon-remove"></span></button>
+
+
+      <!-- Login and registration section at bottom of slider -->
+      <div class="auth" ng-show="showAuthForm">
+        <div class="login" ng-show="loginOrRegister">
+          <form ng-submit="login(user); clearLogin()">
+            <h1>Log In Here</h1>
+            <input ng-model='user.email' type="text" placeholder="Email" value="">
+            <input ng-model='user.password' type="password" placeholder="Password" value=""><br>
+            <input class="loginbutton" type="submit" value="Login">
+            <a ng-click='loginOrRegister=false'>Create New Account Instead</a>
+          </form>
+        </div>
+
+        <div class="register" ng-hide="loginOrRegister">
+          <form ng-submit="register(newUser); clearLogin()">
+            <h1>Register Now!</h1>
+            <input ng-model='newUser.displayName' type="text" placeholder="Display Name" value=""><br>
+            <input ng-model='newUser.email' type="text" placeholder="Email" value="">
+            <input ng-model='newUser.password' type="password" placeholder="Password" value=""><br>
+            <input class="registerbutton" type="submit" value="Register & Login">
+            <a ng-click='loginOrRegister=true'>Log In Instead</a>
+          </form>
+        </div>
+      </div>
+      <!-- End login / registration section -->
+
+    </div>
+
+     <!-- *** SLIDER END!!! *** -->
+
 
 
     <!-- *** JavaScripts *** -->
@@ -237,20 +226,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <script src="./dist/angular-soundmanager2.js"></script>
-    <script>
-  /*    $("trigger").click {
-      var slider = $('#slider').slideReveal();
-      slider.slideReveal("toggle");
-    }
-  */
-    $("#slider").slideReveal({
-      trigger: $("#trigger"),
-      push: false,
-      overlay: true,
-      overlayColor: "rgba(0,0,0,0.5)",
-      autoEscape: true
-    });
-    </script>
+
     <!-- Custom Angular Scripts -->
     <script src="./app.js" type="text/javascript"></script>
     <script src="./controllers/mainCtrl.js" type="text/javascript"></script>
@@ -258,6 +234,41 @@
     <script src="./controllers/mainServ.js" type="text/javascript"></script>
     <script src="./controllers/SoundCloudServ.js" type="text/javascript"></script>
     <script src="./controllers/adminCtrl.js" type="text/javascript"></script>
+    <script>
+    /*http://nnattawat.github.io/slideReveal/*/
 
+    var slider = $('#slider').slideReveal();
+
+    $("#trigger").click(function(){
+      var slider = $('#slider').slideReveal({
+        push: false,
+        overlay: true,
+        overlayColor: "rgba(0,0,0,0.5)",
+        autoEscape: true
+      });
+
+      slider.slideReveal("toggle", false);
+    })
+
+    $("#close").click(function() {
+
+        $("#slider").slideReveal({
+          push: false,
+          overlay: false,
+          autoEscape: true
+        });
+
+    });
+
+    $("#slider-menu").children().click(function() {
+
+        $("#slider").slideReveal({
+          push: false,
+          overlay: false,
+          autoEscape: true
+        });
+    });
+
+    </script>
   </body>
 </html>

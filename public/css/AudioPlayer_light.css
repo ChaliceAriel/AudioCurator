@@ -6,7 +6,7 @@
 	padding: 6px;
 	margin: 10px 0;
 	width: 100%;
-	height: 160px;
+	height: 175px;
 }
 
 #player {
@@ -23,6 +23,7 @@ button {
 	color: pink;
 	background-color: #fff;
 	border-color: #c25a7c;
+	box-shadow: 2px 4px 10px #333;
 }
 button:hover {
 	border-color: pink;
@@ -31,21 +32,13 @@ button:hover {
 button:focus { 
 	outline:0 !important; 
 }
-#track-name {
-	margin: 0 auto;
-	padding: 0;
-	padding-top: 2px;
-	width: max-content;
-	text-decoration: underline;
-	color: #c25a7c;
-}
 #play {
 	border-radius: 50%;
 	width:50px;
 	height:50px;
 	position: relative;
 	right: 20px;
-	top: 2px;
+	top: 6px;
 }
 #shuffle {
 	position: relative;
@@ -105,8 +98,58 @@ button:focus {
 
 .glyphicon-random {
 	position: relative;
-	top: 0;
-	left: 0;
+	top: 3px;
+}
+
+.marquee {
+ border: 5px inset pink;
+ border-radius: 4px;
+ width: 70%;
+ min-width: 300px;	
+ height: 26px;	
+ margin: 20px auto 0;
+ line-height: 24px;
+ overflow: hidden;
+ position: relative;
+}
+.marquee h4 {
+ font-size: 18px;		
+ position: absolute;
+ text-decoration: underline;
+ color: #c25a7c;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ /* Apply animation to this element */	
+ -moz-animation: marquee 15s linear infinite;
+ -webkit-animation: marquee 15s linear infinite;
+ animation: marquee 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes marquee {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes marquee {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes marquee {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
 }
 
 @media (max-width: 360px) {
