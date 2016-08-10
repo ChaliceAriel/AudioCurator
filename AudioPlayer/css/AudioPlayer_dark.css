@@ -11,7 +11,7 @@
 #player {
 	background-color: #222;
 	color: #fff;
-	border: 2px solid #00ffff;
+	border: 2px solid red;
 	border-radius: 4px;
 	width: 100%;
 	height: 100%;
@@ -19,11 +19,11 @@
 
 button {
 	font-size: 20px;
-	color: #00ffff;
+	color: red;
 	background-color: #333;
 }
 button:hover {
-	border-color: #00ffff;
+	border-color: red;
 }
 button:focus { 
 	outline:0 !important; 
@@ -73,7 +73,7 @@ button:focus {
 	margin: 30px auto 10px;
 }
 .progress-bar-info {
-    background-color: #00ffff;
+    background-color: red;
 }
 .progress-label {
 	float: left;
@@ -108,7 +108,7 @@ button:focus {
  font-size: 18px;		
  position: absolute;
  text-decoration: underline;
- color: #00ffff;
+ color: red;
  width: 100%;
  height: 100%;
  margin: 0;

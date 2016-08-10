@@ -10,14 +10,39 @@
 </head>
 <body>
 
+    <!--  *** SLIDER BEGIN!!! *** -->
+     <div id='slider' class="text-center">
+      <div id="sm-spacer">
+      </div>
+      <div id="logo">
+        <img id="blog-logo-slider" src="./images/headphones.png"/>
+        <h3 id="logoText">Audio Curator</h3>
+      </div>
+      <ul class="nav nav-pills nav-stacked text-center">
+        <li class="main-btn"><a href="#">Main</a></li>
+        <li class="active"><a href="about.html">About</a></li>
+        <li ng-hide='showLoginButton'><a ui-sref='admin'>Admin Panel</a></li>
 
-<div class="bg"></div>
+        <li ng-show='showLoginButton' ng-click='showAuthForm = showAuthForm ? false : true'>
+          <a href="#"><span class="glyphicon glyphicon-print"></span> Login</a>
+        </li>
+        <li ng-hide='showLoginButton' ng-click='logout()'>
+          <a href="#"><span class="glyphicon glyphicon-print"></span> Logout</a>
+        </li>
+      </ul><br>
+      <button id="close"><span class="glyphicon glyphicon-remove"></span></button>
+
+    </div>
+
+     <!-- *** SLIDER END!!! *** -->
+<div id="trigger"><span id="menu" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div>
+ <div class="bg"></div>
 <div class="jumbotron">
   <h1>About AudioCurator</h1>
   <p class="lead tagline"> An open source Audio Blog</p>
 </div>
 
-<div class="container">
+
   <div class="row abouttext">
    
   
@@ -30,8 +55,10 @@
    <a href="https://github.com/AudioCurator/AudioCurator">GitHub Repository</a>
 
     <hr>
+
   </div>
 
+   
   <div class="row abouttext">
   <h1>The creators</h1>
     <hr>
@@ -50,10 +77,11 @@
     Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
     dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
     Aliquam in felis sit amet augue.
-    
+
   </div>
   <hr>
-  <div class="row abouttext">
+   
+    <div class="row abouttext">
     <h2>Special Thanks</h2>
     A special thanks to:<br>
 
@@ -92,6 +120,69 @@
      $(window).scroll(function(e){
            parallax();
            });
-     </script>
+
+    </script>             
+ <!-- *** Footer *** -->
+    <div id="footer" >
+      <div class="container">
+        <div class="row">
+          <div id="footerContact" class="col-xs-4">
+            <i class="glyphicon glyphicon-search"></i>
+            <input id="search" type="text" name="Search"/>
+          </div>
+          <div id="footerSocial" class="col-xs-4 text-center">
+            <a href="#"><img src="images/fbook_dark.png" alt="facebook link" /></a>
+            <a href="#"><img src="images/tweet_dark.png" alt="twitter link" /></a>
+            <a href="#"><img src="images/github_dark.png" alt="github link" /></a>
+          </div>
+          <div id="footerNav" class="navbar-nav col-xs-4">
+            <ul>
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <p id="copyright" class="text-center">Copyright &copy; AudioCurator 2016</p>
+      </div>
+    </div>
+
+    <!-- *** JavaScripts *** -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./dist/jquery.slidereveal.min.js"></script>
+  <script>        /*http://nnattawat.github.io/slideReveal/*/
+
+    var slider = $('#slider').slideReveal();
+
+    $("#trigger").click(function(){
+      var slider = $('#slider').slideReveal({
+        push: false,
+        overlay: true,
+        overlayColor: "rgba(0,0,0,0.5)",
+        autoEscape: true
+      });
+
+      slider.slideReveal("toggle", false);
+    })
+
+    $("#close").click(function() {
+
+        $("#slider").slideReveal({
+          push: false,
+          overlay: false,
+          autoEscape: true
+        });
+
+    });
+
+    $("#slider-menu").children().click(function() {
+
+        $("#slider").slideReveal({
+          push: false,
+          overlay: false,
+          autoEscape: true
+        });
+    });
+  </script>
 </body>
 </html>

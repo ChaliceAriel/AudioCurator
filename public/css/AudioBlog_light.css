@@ -1,6 +1,7 @@
 
 /* general styles */
 html, body {
+  box-sizing: content-box;
   height: 100%;
   width: 100%;
   background-color: #fff;
@@ -18,6 +19,9 @@ h1 {
   width: 100px;
   height: 50px;
   margin: 0 auto;
+}
+input {
+  box-shadow: 2px 4px 10px #333;
 }
 #header {
   width: 100%;
@@ -84,8 +88,8 @@ span#brand {
   background-color: transparent;
 }
 #main {
-  /*background: url(images/wheat_girl.jpeg) no-repeat center center fixed;*/
-  background: url(../images/cherry_tree.jpeg) no-repeat center center fixed;
+  background: url(../images/wheat_girl.jpeg) no-repeat center center fixed;
+/*  background: url(../images/cherry_tree.jpeg) no-repeat center center fixed;*/
   background-color: #fff;
   display: table;
   height: 100%;
