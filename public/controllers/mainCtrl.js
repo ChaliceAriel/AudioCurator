@@ -156,6 +156,7 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
   var displayPosts = function(){
     mainServ.getPosts()               // get the posts!
     .then(function(res){
+      console.log(res);
       $rootScope.postHistory = res.reverse();   // save the posts!
       buildPlaylist(res);                // build the playlist from post datas!
     });
