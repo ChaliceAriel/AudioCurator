@@ -101,17 +101,7 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
   var buildPlaylist = function(postData) {
     console.log('buildPlaylist postData', postData);
     $scope.songs = [];
-    // for (var i = 0; i < postData.length; i++) {     // This for loop doesn't produce streamable results. Reason unknown.
-    //   console.log('METHOD ONE');
-    //   var track = {
-    //     id: postData[i].trackInfo.soundcloudId,
-    //     title: postData[i].trackInfo.title,
-    //     artist: 'herpderp placeholder',
-    //     url: postData[i].trackInfo.streamURL + '?client_id=' + mainServ.clientId
-    //   };
-    //   $scope.songs.push(track);
-    //   console.log("buildplaylist tracks" + i, track);
-    // }
+    
     for (var i = 0; i < postData.length; i++) {
       SC.stream('/tracks/' + postData[i].trackInfo.soundcloudId, function(sm_object){
         var url = 'https' + sm_object.url.slice(4);

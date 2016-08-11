@@ -17,8 +17,6 @@
 
   <body ng-cloak ng-controller="mainCtrl" >
 
-
-
     <!-- Main page begins here -->
   <div id="trigger"><span id="menu" class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
   </div>
@@ -85,7 +83,7 @@
       <div class="col-sm-11 col-sm-offset-1">
           <div class="row">
 
-            <div class="col-sm-8 col-sm-offset-1">
+            <div class="col-md-7 col-md-offset-1">
 
 
               <!-- STATES ATTACH HERE! -->        <!-- STATES ATTACH HERE! -->
@@ -93,12 +91,11 @@
               <!-- STATES ATTACH HERE! -->        <!-- STATES ATTACH HERE! -->
 
 
-
-              <div class="well" ng-repeat="post in postHistory| filter: search">
+              <div class="well" ng-repeat="post in postHistory | filter: search">
 
                   <span>
-                    <div class = "posttitle container">
-                    <strong><div class = "posttitle visible-xs visible-sm visible-md visible-lg">{{post.displaydate}} - {{post.trackInfo.title}}</div></strong>
+                    <div class>
+                    <right><h3>{{post.trackInfo.title}}</h3></right>
                     </div>
                     <div class = "trackart">
                     <img class = "trackart" ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
@@ -107,8 +104,9 @@
                     <h5 ng-hide="readytoupdate">{{post.body}}</h5>
                     </div>
                     <div class ="authortext"> <h6> - {{post.postedBy}}<h6></div>
-                  <!--   <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud</a> -->
+                    <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud {{artist}}</a>
                   </span>
+                  <right><h5>Posted on {{post.displaydate}} - {{post.postedBy}}</h5></right>
 
                   <form ng-show="readytoupdate" ng-submit="update(post)">
                     <div class="input-field">
@@ -125,29 +123,47 @@
                   <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
               </div>
 
-            </div>
-              <div class="col-sm-3 widgettext">
-               <div class="well">
 
-                 <center><script>
-                     var mixmap_mapheight = 225;
-                     var mixmap_mapwidth = 225;
+            </div>
+              <div class="col-md-4 widgettext side-bar">
+
+                <div class="well" id="twitWidget">
+                  <a class="twitter-timeline" href="https://twitter.com/ChaliceAriel">Tweets by @ChaliceAriel</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div id="sm-spacer">
+                </div>
+                <div class="well side-bar">
+
+                 <left><script>
+                     var mixmap_mapheight = 250;
+                     var mixmap_mapwidth = 250;
                      var mixmap_host = "http://www.mixmap.com/remote_map.php";var cid = 714383;</script>
-                <script src="http://www.mixmap.com/site/js/remote_map.js"></script></center>
+                  <script src="http://www.mixmap.com/site/js/remote_map.js"></script></left>
                  </div>
 
            
-               <div class="well">
-               <center>
-               Scroll down for the latest news in Tech<br><br>
-               <center>
-               <iframe width="250" height="225" src="http://tech.economictimes.indiatimes.com/widget/technology" frameborder="0"></iframe>
-               </center></center>
+<!--                <div class="well">
+                 <center>
+                 Scroll down for the latest news in Tech<br><br>
+                 <center>
+                 <iframe height="225" src="http://tech.economictimes.indiatimes.com/widget/technology" frameborder="0"></iframe>
+                 </center></center>
+               </div> -->
+
+              <div id="sm-spacer">
                </div>
 
-               <div class="well">
+               <div class="well side-bar">
+                  <div><p>Our first public show as a touring duo is tonight in Bozeman! We&#039;re kicking off our tour together at Red Brain Media...</p>Posted by <a href="https://www.facebook.com/AaronHowardMusic/">Aaron Howard</a> on&nbsp;<a href="https://www.facebook.com/AaronHowardMusic/posts/10154222722017451:0">Thursday, June 2, 2016</a>
+                  </div>
+               </div>
+
+               <div id="sm-spacer">
+               </div>
+
+               <div class="well side-bar">
                <center>
-               Check out my SoundCloud<br><br><iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fjeslynlane&color=orange_white&size=64" style="width: 64px; height: 64px;"></iframe></center>
+               Check out my Music on SoundCloud<br><br><iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fjeslynlane&color=orange_white&size=64" style="width: 64px; height: 64px;"></iframe></center>
                </div>
               </div>
           </div>

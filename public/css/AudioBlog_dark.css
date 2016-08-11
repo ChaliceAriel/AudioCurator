@@ -11,6 +11,10 @@ h1 {
   font-weight: 700;
   display: inline;
 }
+#twitWidget {
+  height: 300px;
+  overflow: scroll;
+}
 
 .nav {
   clear: both;
@@ -240,7 +244,7 @@ textarea#body {
 #close {
   border-radius: 50%;
   position: relative;
-  top: 210px;
+  top: 220px;
 }
 #search {
   color: #00ffff;
@@ -262,7 +266,12 @@ textarea#body {
 }
 
 }
+@media (max-width: 1000px) {
+ .side-bar {
+  width: 70%;
+ }
 
+}
 /*The styles below are for the post div*/
 
 .trackart {
@@ -273,85 +282,6 @@ textarea#body {
   width: 50%;
 
 }
-
-/*.posttitle {
-  display:flex;
-  position:relative;
-  display: inline-block;
-  font: 50px;
-  width: 500px;
-  margin-left: 120px;
-  text-align: center;
-}
-
-.postbody {
-  display:flex;
-  display:inline-block;
-  position:relative;
-  font:30px;
-  text-align: center;
-  padding-top:5%;
-  padding-right:25%;
-
-}
-
-.authortext {
-  text-align: right;
-}
-
-@media screen and (max-width: 1328px) {
-
-           .posttitle {
-            padding-right: 150px;
-        
-      }
-
-      .postbody {
-        display:flex;
-      display:inline-block;
-      position:absolute;
-      font:30px;
-      text-align: center;
-      width: 600px;
-        
-       }
-}
-
-@media screen and (max-width: 1069px) {
-
-           .posttitle {
-            padding-right: 350px;
-            
-        
-      }
-
-      .postbody {
-        display:flex;
-        display:inline-block;
-        font:30px;
-        text-align: center;
-        position: relative;
-        padding-top: 10px;
-        
-       }
-
-]
-
-@media screen and (max-width: 468px) {
-
-        .posttitle {
-
-        }
-
-        .postbody { 
-        display:flex;
-        display:inline-block;
-        position: relative;
-        padding-top: 10px;
-
-         }
-
-  }*/
 
 .widgettext {
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
