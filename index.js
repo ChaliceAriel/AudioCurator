@@ -1,7 +1,7 @@
 // ---------------- DEPENDENCIES ----------------
 var express   = require('express'),
   bodyParser  = require('body-parser'),
-  cors        = require('cors'),
+  //cors        = require('cors'),
   mongoose    = require('mongoose'),          // NoSQL DB connector
   passport    = require('passport'),          // Handles authentication
   session     = require('express-session');   // Saves session data and cookies
@@ -23,7 +23,7 @@ require('./passport/passport')(passport);
 app.use(session({ secret: config.secret , cookie: { maxAge: 3600000 }, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());   // Initialize Passport
 app.use(passport.session());      // Configure session through passport. Starts session on login
-app.use(cors());
+//app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public')); // Makes all of our files in the /public directory available to the internet
@@ -83,11 +83,30 @@ app.put('/post/:id', ifAuthenticated, postCtrl.update);      // Edit a blog entr
 app.delete('/post/:id', ifAuthenticated, postCtrl.delete);   // Remove a blog from teh database
 
 // ---------------- CONNECT TO MONGODB ----------------
-var mongoUri = "mongodb://localhost:27017/AudioCurator";    // Set database to 'AudioCurator' on local MongoDB instance
-mongoose.connect(mongoUri);                                 // Connect to database specified on previous line
-mongoose.connection.on('error', console.error.bind(console, 'connection error'));     // If error, inform us!
-mongoose.connection.once('open', function(){
-  console.log("Connected to mongoDB");      // Confirm that we have connected to MongoDB in the console when app is started
+// var mongoUri = "mongodb://localhost:27017/AudioCurator";    // Set database to 'AudioCurator' on local MongoDB instance
+// mongoose.connect(mongoUri);                                 // Connect to database specified on previous line
+// mongoose.connection.on('error', console.error.bind(console, 'connection error'));     // If error, inform us!
+// mongoose.connection.once('open', function(){
+//   console.log("Connected to mongoDB");      // Confirm that we have connected to MongoDB in the console when app is started
+// });
+
+var uriUtil = require('mongodb-uri');
+
+var options = {
+server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};  
+var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/audiocurator";
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+//console.log(mongooseUri);
+
+mongoose.connect(mongooseUri, options, function(err, data){
+ if(err){
+   console.log('connection error', err)
+ } else {
+   console.log('connection', data);
+ }
 });
 
 
