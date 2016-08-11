@@ -128,14 +128,14 @@
                       <button ng-click="readytoupdate=false">cancel</button>
                     </div>
                   </form>
-
+                  <div ng-show="isLoggedIn"> 
                   <button ng-hide="readytodelete" ng-click="readytodelete=true">delete</button>
                   <button ng-show="readytodelete" ng-click="readytodelete=false">cancel</button>
                   <button ng-show="readytodelete" ng-click="remove(post._id)">delete</button>
                 
                   <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
               </div>
-
+              </div>
 
             </div>
               <div class="col-md-4 widgettext side-bar">
@@ -145,14 +145,7 @@
                 </div>
                 <div id="sm-spacer">
                 </div>
-                <div class="well side-bar">
-
-                 <left><script>
-                     var mixmap_mapheight = 250;
-                     var mixmap_mapwidth = 250;
-                     var mixmap_host = "https://www.mixmap.com/remote_map.php";var cid = 714383;</script>
-                  <script src="https://www.mixmap.com/site/js/remote_map.js"></script></left>
-                 </div>
+              
 
               <div id="sm-spacer">
                </div>
