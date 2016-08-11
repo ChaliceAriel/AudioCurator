@@ -45,8 +45,10 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
 
   // This function initiates the login process when the login form is submitted.
   $scope.login = function(user) {
+    console.log(user, "login user")
     $http.post('/login', user)
       .then(function(res){
+        console.log(res, "login response")
         $scope.loggedInUser = res.config.data.email;
         $scope.getMe(); // Sets loggedInUser to email of logged in user. Need to fix this to include displayName.
         $scope.showLoginButton = false;          // Hide login button and show logout button.
@@ -57,6 +59,7 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
 
   // This is submitted by our registration form and sends a new user object to our /signup route which will test for a unique username and email, then create the user in the database and log them in.
   $scope.register = function(user) {
+    console.log(user, "signup user")
     $http.post('/signup', user)
       .then(function(res){
         console.log('/signup res', res);
