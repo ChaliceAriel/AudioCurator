@@ -90,32 +90,38 @@ app.delete('/post/:id', ifAuthenticated, postCtrl.delete);   // Remove a blog fr
 //   console.log("Connected to mongoDB");      // Confirm that we have connected to MongoDB in the console when app is started
 // });
 
-var uriUtil = require('mongodb-uri');
+// var uriUtil = require('mongodb-uri');
 
-var options = {
-server:  { socketOptions: { keepAlive: 1, 
-  // connectTimeoutMS: 30000
-   } },
-replset: { socketOptions: { keepAlive: 1, 
-  // connectTimeoutMS: 30000 
-} }
-};  
-var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/audiocurator";
-var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+// var options = {
+// server:  { socketOptions: { keepAlive: 1, 
+//   // connectTimeoutMS: 30000
+//    } },
+// replset: { socketOptions: { keepAlive: 1, 
+//   // connectTimeoutMS: 30000 
+// } }
+// };  
+// var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/audiocurator";
+// var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
-console.log(mongooseUri);
+// console.log(mongooseUri);
 
-mongoose.connect(mongooseUri, options, function(err, data){
- if(err){
-   console.log('connection error', err)
- } else {
-   console.log('connection', data);
- }
-});
+mongoose.connect(config.mongo_uri
+//   , function(err, data){
+//  if(err){
+//    console.log('connection error', err)
+//  } else {
+//    console.log('connection', data);
+//  }
+// }
+);
+
+mongoose.connection.once('open',function(){
+  console.log("Connected to mongo labs")
+})
 
 
 
 // ---------------- BEGIN TAKING NETWORK REQUESTS ----------------
-app.listen(process.env.PORT || 3000, function(){                // Begin listening on selected port
-  console.log("listening to 3000 ");        // Confirm port to user in the console when the app is started
+app.listen(config.port, function(){                // Begin listening on selected port
+  console.log("listening to " + config.port);        // Confirm port to user in the console when the app is started
 });
