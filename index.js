@@ -101,6 +101,8 @@ var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 //console.log(mongooseUri);
 
+
+
 mongoose.connect(mongooseUri, options, function(err, data){
  if(err){
    console.log('connection error', err)
