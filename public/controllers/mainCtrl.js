@@ -6,6 +6,7 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
 
   // This will hold an arry of songs that make up or continuous playlist
   $scope.songs = [];
+  $scope.notPlaying = false;
 
   // This holds all of the post data that we have requested from teh server
   $rootScope.postHistory;

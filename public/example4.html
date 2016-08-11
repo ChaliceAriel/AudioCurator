@@ -124,7 +124,11 @@
                   </div>
                 </div>  
 
+                <div class="row">
+                  <div class="col-xs-12">
                   <h5 class="date">Posted on {{post.displaydate}}</h5>
+                  </div>
+                  </div>
 
                   <form ng-show="readytoupdate" ng-submit="update(post)">
                     <div class="input-field">
@@ -134,11 +138,12 @@
                     </div>
                   </form>
 
-                  <button ng-hide="readytodelete" ng-click="readytodelete=true">delete</button>
-                  <button ng-show="readytodelete" ng-click="readytodelete=false">cancel</button>
-                  <button ng-show="readytodelete" ng-click="remove(post._id)">delete</button>
-                
-                  <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
+                  <div ng-show="isLoggedIn">  
+                    <button ng-hide="readytodelete" ng-click="readytodelete=true">delete</button>
+                    <button ng-show="readytodelete" ng-click="readytodelete=false">cancel</button>
+                    <button ng-show="readytodelete" ng-click="remove(post._id)">delete</button>
+                    <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
+                  </div>  
               </div>
 
 
