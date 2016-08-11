@@ -262,3 +262,93 @@ textarea#body {
 }
 
 }
+
+/*The styles below are for the post div*/
+
+.trackart {
+  display:flex;
+  display:inline-block;
+  position:relative;
+  height: 50%;
+  width: 50%;
+
+}
+
+/*.posttitle {
+  display:flex;
+  position:relative;
+  display: inline-block;
+  font: 50px;
+  width: 500px;
+  margin-left: 120px;
+  text-align: center;
+}
+
+.postbody {
+  display:flex;
+  display:inline-block;
+  position:relative;
+  font:30px;
+  text-align: center;
+  padding-top:5%;
+  padding-right:25%;
+
+}
+
+.authortext {
+  text-align: right;
+}
+
+@media screen and (max-width: 1328px) {
+
+           .posttitle {
+            padding-right: 150px;
+        
+      }
+
+      .postbody {
+        display:flex;
+      display:inline-block;
+      position:absolute;
+      font:30px;
+      text-align: center;
+      width: 600px;
+        
+       }
+}
+
+@media screen and (max-width: 1069px) {
+
+           .posttitle {
+            padding-right: 350px;
+            
+        
+      }
+
+      .postbody {
+        display:flex;
+        display:inline-block;
+        font:30px;
+        text-align: center;
+        position: relative;
+        padding-top: 10px;
+        
+       }
+
+]
+
+@media screen and (max-width: 468px) {
+
+        .posttitle {
+
+        }
+
+        .postbody { 
+        display:flex;
+        display:inline-block;
+        position: relative;
+        padding-top: 10px;
+
+         }
+
+  }*/

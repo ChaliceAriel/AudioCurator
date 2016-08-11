@@ -1,4 +1,6 @@
 angular.module('AudioCurator').controller('adminCtrl', function($scope, $rootScope, $http, $state, mainServ){
+  
+
 
   $scope.currentUser = '';
 
@@ -45,7 +47,8 @@ angular.module('AudioCurator').controller('adminCtrl', function($scope, $rootSco
     }
   };
 
-
+  $scope.readytodelete = false;
+  $scope.readytoupdate = false;
 
   // This function can be deleted
   // SC.get("https://api.soundcloud.com/users/slavetothesound/favorites", {

@@ -36,7 +36,7 @@
     <!--======================= SOUNDMANAGER2 PLAYER STARTS HERE! ============================-->
 
   <div id="player-box">    
-    <div id="player">
+    <div id="player" class = "playerstyle">
 
         <!-- init soundManager2 player -->
         <sound-manager></sound-manager>
@@ -97,15 +97,21 @@
               <div class="well" ng-repeat="post in postHistory| filter: search">
 
                   <span>
-                    <h2><strong>{{post.displaydate}} - {{post.trackInfo.title}}</strong></h2>
-                    <img ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
+                    <div class = "posttitle container">
+                    <strong><div class = "posttitle visible-xs visible-sm visible-md visible-lg">{{post.displaydate}} - {{post.trackInfo.title}}</div></strong>
+                    </div>
+                    <div class = "trackart">
+                    <img class = "trackart" ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
+                    </div>
+                    <div class = "postbody">
                     <h5 ng-hide="readytoupdate">{{post.body}}</h5>
-                    <h6> - {{post.postedBy}}<h6>
-                    <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud</a>
+                    </div>
+                    <div class ="authortext"> <h6> - {{post.postedBy}}<h6></div>
+                  <!--   <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud</a> -->
                   </span>
 
-                  <form class = "col s6" ng-show="readytoupdate" ng-submit="update(post)">
-                    <div class="input-field col s6">
+                  <form ng-show="readytoupdate" ng-submit="update(post)">
+                    <div class="input-field">
                       <input ng-model= "post.body"/>
                       <input type="submit"/>
                       <button ng-click="readytoupdate=false">cancel</button>
@@ -115,6 +121,7 @@
                   <button ng-hide="readytodelete" ng-click="readytodelete=true">delete</button>
                   <button ng-show="readytodelete" ng-click="readytodelete=false">cancel</button>
                   <button ng-show="readytodelete" ng-click="remove(post._id)">delete</button>
+                
                   <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
               </div>
 
