@@ -110,7 +110,8 @@ mongoose.connect(mongooseUri, options, function(err, data){
 });
 
 
+
 // ---------------- BEGIN TAKING NETWORK REQUESTS ----------------
-app.listen(8000, function(){                // Begin listening on selected port
-  console.log("listening to 8000 ");        // Confirm port to user in the console when the app is started
+app.listen(process.env.PORT || 3000, function(){                // Begin listening on selected port
+  console.log("listening to 3000 ");        // Confirm port to user in the console when the app is started
 });
