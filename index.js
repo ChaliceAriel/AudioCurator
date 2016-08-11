@@ -92,25 +92,22 @@ app.delete('/post/:id', ifAuthenticated, postCtrl.delete);   // Remove a blog fr
 
 var uriUtil = require('mongodb-uri');
 
-// var options = {
+var options = {
 // server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
 // replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
-// };  
+};  
 var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/audiocurator";
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 console.log(mongooseUri);
 
-mongoose.connect(mongooseUri
-  // ,
-  // options, function(err, data){
-//  if(err){
-//    console.log('connection error', err)
-//  } else {
-//    console.log('connection', data);
-//  }
-// }
-);
+mongoose.connect(mongooseUri, options, function(err, data){
+   if(err){
+     console.log('connection error', err)
+   } else {
+     console.log('connection', data);
+   }
+});
 
 
 
