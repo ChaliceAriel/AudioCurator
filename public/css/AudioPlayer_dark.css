@@ -92,11 +92,6 @@ span.glyphicon {
 
 }
 
-.glyphicon-random {
-	position: relative;
-	top: 3px;
-}
-
 .marquee {
  border: 5px inset #fff;
  border-radius: 4px;

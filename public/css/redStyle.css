@@ -1,0 +1,86 @@
+
+#header {
+  border-bottom: 2px solid red;
+}
+#menu:hover, #menu:focus {
+  color: red;
+}
+#blog-title, #logoText {
+  text-shadow: 2px 2px 8px red;
+}
+#slider {
+  border: 2px solid red;
+}
+#main {
+  background: url(../images/red_guitar.jpeg) no-repeat center center fixed;
+}
+
+.well, input, #trigger {
+  border: 2px solid red;
+}
+
+#footer {
+  border-top: 2px solid red;
+}
+
+#footer image:hover {
+  border: 2px solid red;
+}
+
+#footerNav ul li a:hover {
+  color: red;
+}
+
+#footerSocial {
+  border-right: 2px solid red;
+  border-left: 2px solid red;
+}
+
+.nav-pills>li.active {
+  background-color: red;
+}
+
+.nav-pills>li {
+  border: 2px solid red;
+}
+
+a:active {
+    background-color: red;
+}
+a:hover {
+    background-color: red;
+}
+.nav-pills>li.active>a, .nav-pills>li>a:focus, 
+.nav-pills>li>a:hover, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background-color: red;
+}
+button, input {
+  color: red;
+}
+input {
+  margin-bottom: 10px;
+}
+button:hover {
+  border-color: red;
+}
+#search {
+  color: red;
+}
+#search:focus {
+  border-color:red;
+}
+
+#player {
+  border: 2px solid red;
+}
+
+button {
+  color: red;
+}
+.progress-bar-info {
+    background-color: red;
+}
+
+.marquee h4 {
+ color: red;
+ }

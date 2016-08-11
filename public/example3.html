@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html ng-app="AudioCurator">
@@ -9,6 +8,7 @@
     <!-- Custom Stylesheets -->
     <link href="./css/AudioBlog_dark.css" rel="stylesheet" type="text/css"/>
     <link href="./css/AudioPlayer_dark.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/redStyle.css" rel="stylesheet" type="text/css"/>
 
 
     <title>Audio Curator</title>
@@ -36,7 +36,7 @@
     <!--======================= SOUNDMANAGER2 PLAYER STARTS HERE! ============================-->
 
   <div id="player-box">    
-    <div id="player" class = "playerstyle">
+    <div id="player">
 
         <!-- init soundManager2 player -->
         <sound-manager></sound-manager>
@@ -97,21 +97,15 @@
               <div class="well" ng-repeat="post in postHistory| filter: search">
 
                   <span>
-                    <div class = "posttitle container">
-                    <strong><div class = "posttitle visible-xs visible-sm visible-md visible-lg">{{post.displaydate}} - {{post.trackInfo.title}}</div></strong>
-                    </div>
-                    <div class = "trackart">
-                    <img class = "trackart" ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
-                    </div>
-                    <div class = "postbody">
+                    <h2><strong>{{post.displaydate}} - {{post.trackInfo.title}}</strong></h2>
+                    <img ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
                     <h5 ng-hide="readytoupdate">{{post.body}}</h5>
-                    </div>
-                    <div class ="authortext"> <h6> - {{post.postedBy}}<h6></div>
-                  <!--   <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud</a> -->
+                    <h6> - {{post.postedBy}}<h6>
+                    <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud</a>
                   </span>
 
-                  <form ng-show="readytoupdate" ng-submit="update(post)">
-                    <div class="input-field">
+                  <form class = "col s6" ng-show="readytoupdate" ng-submit="update(post)">
+                    <div class="input-field col s6">
                       <input ng-model= "post.body"/>
                       <input type="submit"/>
                       <button ng-click="readytoupdate=false">cancel</button>
@@ -121,7 +115,6 @@
                   <button ng-hide="readytodelete" ng-click="readytodelete=true">delete</button>
                   <button ng-show="readytodelete" ng-click="readytodelete=false">cancel</button>
                   <button ng-show="readytodelete" ng-click="remove(post._id)">delete</button>
-                
                   <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
               </div>
 
@@ -164,7 +157,7 @@
           </div>
           <div id="footerNav" class="navbar-nav col-xs-4">
             <ul>
-              <li class="active"><a ui-sref='home'>Home</a></li>
+              <li><a ui-sref='home'>Home</a></li>
               <li><a ui-sref='about'>About</a></li>
               <li><a ui-sref='contact'>Contact</a></li>
             </ul>
@@ -183,9 +176,9 @@
         <h3 id="logoText">Audio Curator</h3>
       </div>
       <ul class="nav nav-pills nav-stacked text-center">
-        <li class="active"><a href="#">Example 1</a></li>
+        <li><a href="#">Example 1</a></li>
         <li><a href="example2.html">Example 2</a></li>
-        <li><a href="example3.html">Example 3</a></li>
+        <li class="active"><a href="example3.html">Example 3</a></li>
         <li><a href="example4.html">Example 4</a></li>
         <li><a href="about.html">About</a></li>
         <!-- showAuthForm is a variable that toggles between true and false when this div is clicked to hide or show the login/register form -->
