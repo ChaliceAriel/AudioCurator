@@ -32,7 +32,7 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
 
   // This variable determines which of the Login/Register forms is displayed. (true = login)
   $scope.loginOrRegister = true;
-
+  $scope.isLoggedIn = false;
   // This function calls /logout to log out the current user and clear session data.
   $scope.logout = function() {
     $http.get('/logout')
@@ -40,6 +40,7 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
         $scope.showLoginButton = true;               // Show login button and hide logout button.
         $scope.loggedInUser = {};     // Set loggedInUser to empty object (will also cause login button to display again instead of logout).
         $state.go('home');
+        $scope.isLoggedIn = false;
       })
   };
 
@@ -53,7 +54,8 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
         $scope.getMe(); // Sets loggedInUser to email of logged in user. Need to fix this to include displayName.
         $scope.showLoginButton = false;          // Hide login button and show logout button.
         $scope.showAuthForm = false;                 // Hide the auth form.
-        $state.go('admin');                          // Redirects to admin page after login.
+        $state.go('admin'); 
+        $scope.isLoggedIn = true;                         // Redirects to admin page after login.
       })
   };
 
@@ -66,7 +68,8 @@ angular.module("AudioCurator").controller("mainCtrl", function($scope, $rootScop
         $scope.showLoginButton = false; 
         $scope.getMe();             // Hide login button and show logout button.
         $scope.showAuthForm = false;                 // Hide the auth form
-        $state.go('admin');                          // Redirects to admin page after registration/login
+        $state.go('admin'); 
+        $scope.isLoggedIn = true;                          // Redirects to admin page after registration/login
       })
   };
 
