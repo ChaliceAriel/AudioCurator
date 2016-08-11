@@ -49,6 +49,7 @@ span.glyphicon {
 	width: 40px;
 	height: 40px;
 	left: 10px;
+	top: 1px;
 }
 
 #previous, #next {
