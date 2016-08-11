@@ -11,8 +11,8 @@ So when creating function variables, be sure to use the 'this' keyword. */
 angular.module("AudioCurator").service("mainServ", function($http) {
 
 
-	this.userName = "chalice";
-	this.clientId = '93b670379c03c10be221ed90ee118f93';
+	
+  this.clientId = '93b670379c03c10be221ed90ee118f93';
   this.clientSecret = '87b74a7dd855b8cb9ec10a533be05848';
 
 

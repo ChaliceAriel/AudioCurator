@@ -5,7 +5,7 @@
 	<h3>Add to your playlist below:</h3>
 	<br>
 
-	<form role="form">
+	<form role="form" ng-submit="postBlog(newPost)">
 	  <div class="form-group">
 	    <label for="shareUrl">Soundcloud Share URL<br></label>
 	    <input id="shareUrl" type="text" ng-model="newPost.trackInfo.shareUrl">
@@ -20,3 +20,5 @@
 	<h3 ng-show='newBlogPost'> Preview: </h3>
 	<h4>{{newBlogPost}}</h4>
 </div>
+
+

@@ -20,7 +20,7 @@
     "passport-local": "^1.0.0",
     "soundcloud": "^3.1.2"
   },
-  "engines": {
+/*  "engines": {
     "node": "0.12.7"
-  }
+  }*/
 }
