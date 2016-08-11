@@ -32,7 +32,7 @@
   </div>
     <div id="lg-spacer">
   </div>
-      <div class="row">
+      <div class="row add-margin">
         <div class="col-sm-2">
         </div>
         <div class="col sm-10 col-sm-offset-2">
@@ -89,7 +89,7 @@
       <div class="col-sm-11 col-sm-offset-1">
           <div class="row">
 
-            <div class="col-sm-8 col-sm-offset-1">
+            <div class="col-md-7 col-md-offset-1">
 
 
               <!-- STATES ATTACH HERE! -->        <!-- STATES ATTACH HERE! -->
@@ -97,19 +97,32 @@
               <!-- STATES ATTACH HERE! -->        <!-- STATES ATTACH HERE! -->
 
 
+              <div class="well blog-post" ng-repeat="post in postHistory | filter: search">
+                <div class="row">
+                  <div class="col-xs-2">
+                    <img class="track-art" ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
+                  </div>  
+                  <div class="col-xs-8 col-xs-offset-2 text-center">
+                    <h3>{{post.trackInfo.title}}</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <p ng-hide="readytoupdate">{{post.body}} Lorizzle bizzle dolor crackalackin amet, bizzle adipiscing elit. Nullizzle shiznit velizzle, break it down volutpat, suscipizzle shit, gravida ghetto, arcu. Away eget crazy. Sizzle eros. Dizzle uhuh ... yih! dolizzle dapibizzle pizzle cool shiz. Mauris pot tellivizzle izzle shiznit. Vestibulum izzle yippiyo. Pellentesque fo shizzle my nizzle rhoncizzle black. Pimpin' fizzle habitasse platea dictumst. Shiznit dapibizzle.</p>
+                  </div>
+                </div>
 
-              <div class="well" ng-repeat="post in postHistory| filter: search">
+                <div class="row">
+                  <div class="col-xs-12">
+                  <a href="https://soundcloud.com/jeslynlane"><span class="glyphicon glyphicon-link" aria-hidden="true" "></span> Listen on SoundCloud</a>
+                  <div class="author"><h5> - {{post.postedBy}}</h5></div>
+                  </div>
+                </div>  
 
-                  <span>
-                    <h2><strong>{{post.displaydate}} - {{post.trackInfo.title}}</strong></h2>
-                    <img ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
-                    <h5 ng-hide="readytoupdate">{{post.body}}</h5>
-                    <h6> - {{post.postedBy}}<h6>
-                    <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud</a>
-                  </span>
+                  <h5 class="date">Posted on {{post.displaydate}}</h5>
 
-                  <form class = "col s6" ng-show="readytoupdate" ng-submit="update(post)">
-                    <div class="input-field col s6">
+                  <form ng-show="readytoupdate" ng-submit="update(post)">
+                    <div class="input-field">
                       <input ng-model= "post.body"/>
                       <input type="submit"/>
                       <button ng-click="readytoupdate=false">cancel</button>
@@ -119,19 +132,31 @@
                   <button ng-hide="readytodelete" ng-click="readytodelete=true">delete</button>
                   <button ng-show="readytodelete" ng-click="readytodelete=false">cancel</button>
                   <button ng-show="readytodelete" ng-click="remove(post._id)">delete</button>
+                
                   <button  ng-hide="readytoupdate" type="button" ng-click="readytoupdate =true">edit</button>
               </div>
 
+
             </div>
-              <div class="col-sm-3">
-                <div class="well">
-                  <p>Text</p>
-                  <p>Text</p>
-                  <p>Text</p>
-                  <p>Text</p>
-                  <p>Text</p>
-                  <p>Text</p>
-                  <p>Text</p>
+              <div class="col-md-4 widgettext side-bar">
+
+                <div id="lg-spacer">
+                </div>
+
+               <div class="well side-bar">
+                  <div><p>Our first public show as a touring duo is tonight in Bozeman! We&#039;re kicking off our tour together at Red Brain Media...</p>Posted by <a href="https://www.facebook.com/AaronHowardMusic/">Aaron Howard</a> on&nbsp;Thursday, June 2, 2016</a>
+                  </div>
+               </div>
+
+               <div id="sm-spacer">
+               </div>
+
+               <div class="well side-bar">
+               <center>
+               Check out my Music on SoundCloud<br><br><iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fjeslynlane&color=orange_white&size=64" style="width: 64px; height: 64px;"></iframe></center>
+               </div>
+                <div class="well" id="twitWidget">
+                  <a class="twitter-timeline" href="https://twitter.com/ChaliceAriel">Tweets by @ChaliceAriel</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
               </div>
           </div>

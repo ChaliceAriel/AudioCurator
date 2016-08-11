@@ -26,7 +26,7 @@
     <div id="main" class="container-fluid">
       <div id="sm-spacer">
       </div>
-      <div class="row">
+      <div class="row add-margin">
         <div class="col-sm-2">
         </div>
         <div class="col sm-10 col-sm-offset-2">
@@ -91,22 +91,29 @@
               <!-- STATES ATTACH HERE! -->        <!-- STATES ATTACH HERE! -->
 
 
-              <div class="well" ng-repeat="post in postHistory | filter: search">
+              <div class="well blog-post" ng-repeat="post in postHistory | filter: search">
+                <div class="row">
+                  <div class="col-xs-2">
+                    <img class="track-art" ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
+                  </div>  
+                  <div class="col-xs-8 col-xs-offset-2 text-center">
+                    <h3>{{post.trackInfo.title}}</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <p ng-hide="readytoupdate">{{post.body}} Lorizzle bizzle dolor crackalackin amet, bizzle adipiscing elit. Nullizzle shiznit velizzle, break it down volutpat, suscipizzle shit, gravida ghetto, arcu. Away eget crazy. Sizzle eros. Dizzle uhuh ... yih! dolizzle dapibizzle pizzle cool shiz. Mauris pot tellivizzle izzle shiznit. Vestibulum izzle yippiyo. Pellentesque fo shizzle my nizzle rhoncizzle black. Pimpin' fizzle habitasse platea dictumst. Shiznit dapibizzle.</p>
+                  </div>
+                </div>
 
-                  <span>
-                    <div class>
-                    <right><h3>{{post.trackInfo.title}}</h3></right>
-                    </div>
-                    <div class = "trackart">
-                    <img class = "trackart" ng-if='post.trackInfo.art' src={{post.trackInfo.art}}>
-                    </div>
-                    <div class = "postbody">
-                    <h5 ng-hide="readytoupdate">{{post.body}}</h5>
-                    </div>
-                    <div class ="authortext"> <h6> - {{post.postedBy}}<h6></div>
-                    <a href={{post.trackInfo.shareURL}}>Listen on SoundCloud {{artist}}</a>
-                  </span>
-                  <right><h5>Posted on {{post.displaydate}} - {{post.postedBy}}</h5></right>
+                <div class="row">
+                  <div class="col-xs-12">
+                  <a href="https://soundcloud.com/jeslynlane"><span class="glyphicon glyphicon-link" aria-hidden="true" "></span> Listen on SoundCloud</a>
+                  <div class="author"><h5> - {{post.postedBy}}</h5></div>
+                  </div>
+                </div>  
+
+                  <h5 class="date">Posted on {{post.displaydate}}</h5>
 
                   <form ng-show="readytoupdate" ng-submit="update(post)">
                     <div class="input-field">
@@ -141,20 +148,11 @@
                   <script src="http://www.mixmap.com/site/js/remote_map.js"></script></left>
                  </div>
 
-           
-<!--                <div class="well">
-                 <center>
-                 Scroll down for the latest news in Tech<br><br>
-                 <center>
-                 <iframe height="225" src="http://tech.economictimes.indiatimes.com/widget/technology" frameborder="0"></iframe>
-                 </center></center>
-               </div> -->
-
               <div id="sm-spacer">
                </div>
 
                <div class="well side-bar">
-                  <div><p>Our first public show as a touring duo is tonight in Bozeman! We&#039;re kicking off our tour together at Red Brain Media...</p>Posted by <a href="https://www.facebook.com/AaronHowardMusic/">Aaron Howard</a> on&nbsp;<a href="https://www.facebook.com/AaronHowardMusic/posts/10154222722017451:0">Thursday, June 2, 2016</a>
+                  <div><p>Our first public show as a touring duo is tonight in Bozeman! We&#039;re kicking off our tour together at Red Brain Media...</p>Posted by <a href="https://www.facebook.com/AaronHowardMusic/">Aaron Howard</a> on&nbsp;Thursday, June 2, 2016</a>
                   </div>
                </div>
 
