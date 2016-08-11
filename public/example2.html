@@ -49,7 +49,7 @@
             <!-- Play/Pause button and shuffle button -->
             <!-- To change Play or Pause icons you will have to see line 5149 in the angular-soundmanager2.js file -->
             <button play-pause-toggle data-play="Play!" data-pause="Pause!" id="play" ng-click="loopId()"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
-            <button id="shuffle"><span class="glyphicon glyphicon-random" aria-hidden="true"></span></button>
+            <button stop-music id="stop"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button>
             <!-- Seek buttons -->
             <button next-track id="next"><span class="glyphicon glyphicon-step-forward" aria-hidden="true" "></span></button>
             <button prev-track id="previous"><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></button>
@@ -67,7 +67,7 @@
               </div>
             </div>
             <!-- Title Marquee-->
-            <div class="marquee"><h4>Now Playing: {{currentTitle}} </h4></div>
+            <div class="marquee" ng-if="currentTitle"><h4>Now Playing: {{currentTitle}} </h4></div>
 
     </div>
   </div>
