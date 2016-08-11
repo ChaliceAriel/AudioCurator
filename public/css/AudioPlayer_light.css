@@ -32,6 +32,10 @@ button:hover {
 button:focus { 
 	outline:0 !important; 
 }
+span.glyphicon {
+	position: relative;
+	top: 3px;
+}
 #play {
 	border-radius: 50%;
 	width:50px;

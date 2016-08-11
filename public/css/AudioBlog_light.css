@@ -120,6 +120,29 @@ span#brand {
   z-index: 10;
   border-top: 2px solid #c25a7c;
 }
+#search {
+  width: 80%;
+  max-width: 200px;
+}
+#footerSocial {
+  height: 100px;
+  border-right: 2px solid #c25a7c;
+  border-left: 2px solid #c25a7c;
+}
+#footerSocial img {
+  padding: 5px;
+  width: 54px;
+  height: 54px;
+  background-color: #fff;
+}
+
+#copyright {
+  margin-top: 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  clear: both;
+} 
 
 #footerNav ul li {
   background-color: #fff;
@@ -132,11 +155,6 @@ span#brand {
   color: #c25a7c;
 }
 
-#search {
-  width: 80%;
-  max-width: 200px;
-  color: black;
-}
 i.glyphicon-search {
   color: #c25a7c;
 }
@@ -150,13 +168,13 @@ i.glyphicon-search {
   margin-top: 20px;
 } 
 
-.nav-pills>li+li {
+.nav-pills>li+li, .nav-pills>li {
   margin-bottom: 20px; // 2px by default
 } 
 .nav-pills>li.active {
   margin-bottom: 20px;
   background-color: pink;
-  color: #222;
+  color: #c25a7c;
 }
 
 .nav-pills>li {
@@ -167,6 +185,49 @@ i.glyphicon-search {
 .nav-pills>li>a, .nav-pills>li>a:hover {
   padding: 2px 5px;
   border-radius: 0;
+}
+button, input {
+  font-size: 20px;
+  color: #c25a7c;
+  background-color: pink;
+}
+input {
+  margin-bottom: 10px;
+}
+button:hover {
+  border-color: #c25a7c;
+}
+button:focus, input:focus { 
+  outline:0 !important; 
+}
+.btn:focus,.btn:active {
+  outline: none !important;
+}
+textarea:focus {
+  outline: none !important;
+}
+textarea#body {
+  width: 100%;
+}
+#login-form {
+  margin-top: 260px;
+}
+#post-form label {
+  float: left;
+}
+#register {
+  margin-top: 260px;
+}
+#close {
+  border-radius: 50%;
+  position: relative;
+  top: 180px;
+}
+#search:focus {
+  border-color:#00ffff;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 a {
@@ -205,4 +266,13 @@ a:hover {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+@media (max-width: 715px) {
+  #copyright {
+    margin-top: 40px;
+  }   
+  #footerSocial img {
+    width: 48px;
+    height: 48px;
+}
 
+}
