@@ -1,0 +1,123 @@
+
+#header {
+  border-bottom: 2px solid #093e65;
+}
+
+#trigger {
+  color: #093e65;
+}
+#trigger:hover, #trigger:focus {
+  color: #92d1ff;
+  background-color: #093e65;
+}
+#blog-title {
+  color: #093e65;
+  text-shadow: 2px 2px 8px #92d1ff;
+}
+
+#main {
+  background: url(../images/mountain.jpeg) no-repeat center center fixed;
+}
+
+.well, input, #trigger {
+  border: 2px solid #92d1ff;
+}
+
+#footer {
+  border-top: 2px solid #093e65;
+}
+
+#footerSocial {
+  border-right: 2px solid #093e65;
+  border-left: 2px solid #093e65;
+}
+
+#footerNav ul li a {
+  color: #093e65;
+}
+#footerNav ul li a:hover {
+  color: #093e65;
+}
+
+i.glyphicon-search {
+  color: #093e65;
+}
+#footerSocialMedia {
+  height: 100px;
+  border-right: 2px solid #92d1ff;
+  border-left: 2px solid #92d1ff;
+}
+.nav-pills>li.active {
+  background-color: #92d1ff;
+  color: #093e65;
+}
+
+.nav-pills>li {
+  border: 2px solid #92d1ff;
+}
+button, input {
+  color: #093e65;
+  background-color: #92d1ff;
+}
+button:hover {
+  border-color: #093e65;
+}
+#search:focus {
+  border-color: #093e65;
+}
+a:active {
+    background-color: #92d1ff;
+}
+a:hover {
+    background-color: #92d1ff;
+}
+.nav-pills>li.active>a, .nav-pills>li>a:focus, 
+.nav-pills>li>a:hover, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background-color: #92d1ff;
+}
+
+#search:focus {
+  border-color:#92d1ff;
+}
+#player-box {
+  background-color: #fff;
+  border: 5px solid #92d1ff;
+}
+
+#player {
+  border: 2px solid #92d1ff;
+}
+
+button, #close {
+  background-color: #fff;
+  color: #093e65;
+  border-color: #093e65;
+}
+button:hover, #close:hover {
+  color: #92d1ff;
+  border-color: #92d1ff;
+  background-color: #093e65;
+}
+#vol-icon {
+  color: #093e65;
+}
+.progress {
+  background-color: #92d1ff;
+}
+.progress-bar-info {
+  background-color: #093e65;
+}
+.progress-label {
+  color: #093e65;
+}
+.progress-label-after {
+  color: #093e65;
+}
+
+.marquee {
+ border: 5px inset #92d1ff;
+}
+.marquee h4 {
+ color: #093e65;
+}
+

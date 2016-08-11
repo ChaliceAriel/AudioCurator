@@ -224,7 +224,7 @@ textarea#body {
   top: 180px;
 }
 #search:focus {
-  border-color:#00ffff;
+  border-color:#c25a7c;
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
